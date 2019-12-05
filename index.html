@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>GitHub & 持续集成</title>
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
@@ -21,46 +21,69 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<style>
+			section ul {
+				margin: 0 !important;
+				padding: 0;
+				list-style: none;
+			}
+			section ul li {
+				margin: 25px 0 !important;
+				list-style: none !important;
+				display: inline-block;
+				width: 100%;
+				text-align: center;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-transition="zoom">
+				<section data-transition="fade-out">
 					<h4>
-						GitHub 上的项目持续集成
+						《GitHub & 持续集成》 实践分享
 					</h4>
 				</section>
+				<section data-transition="zoom">
+					   <h4>概要</h4>
+					   <ul>
+						   <li style="font-size: 30px;" class="fragment grow">1. 为什么要持续集成</li>
+						   <li style="font-size: 30px;" class="fragment grow">2. 持续集成的昨天</li>
+						   <li style="font-size: 30px;" class="fragment grow">3. 持续集成的今天</li>
+						   <li style="font-size: 30px;" class="fragment grow">4. 持续集成的明天</li>
+					   </u'l>
+				</section>
 				<section>
-					当我们在部署项目时，我们在做什么？
-						<p class="fragment fade-in">Deploy With Worker</p>
-						<p class="fragment fade-in">Deploy With CI</p>
-						<p class="fragment fade-in">Deploy With *GitHub Actions* </p>
-						
+					<h4>为什么要持续集成？</h4>
+					<ul>
+						<li class="fragment">敏捷</li>
+						<li class="fragment">解放</li>
+					</ul>
+				</section>
+				<section>
+					<h4>持续集成的昨天</h4>
+					<ul>
+						<li class="fragment fade-in">Deployment With Worker</li>
+						<li class="fragment fade-in">Deploy With CI</li>
+						<li class="fragment fade-in">Deploy With <b>GitHub Actions</b> </li>
+					</ul>
 				</section>
 				<section>
 					<p class="fragment grow">grow</p>
 					<p class="fragment shrink">shrink</p>
 					<p class="fragment fade-out">fade-out</p>
 				</section>
-				<section>Slide 4</section>
-				<section>Slide 5</section>
-				<section>Slide 6</section>
-				<section>Slide 7</section>
-				<section>Slide 8</section>
-				<section>Slide 9</section>
-				<section>Slide 10</section>
-				<section>Slide 11</section>
-				<section>Slide 12</section>
-				<section>Slide 13</section>
-				<section>Slide 14</section>
-				<section>Slide 15</section>
-				<section>Slide 16</section>
-				<section>Slide 17</section>
-				<section>Slide 18</section>
-				<section>Slide 19</section>
-				<section>Slide 20</section>
-				<section>Slide 21</section>
-				<section>Slide 22</section>
+				<section>
+					<h4>Tanks</h4>
+					<ul>
+						<li>Github Action</li>
+						<li>Travis CI</li>
+						<li>Reveal.js</li>
+					</ul>
+				</section>
+				<section>
+					Tanks For Wathing!
+				</section>
 			</div>
 		</div>
 
