@@ -26,6 +26,10 @@
 		section ul {
 			margin: 0 !important;
 			padding: 0;
+
+		}
+
+		li {
 			list-style: none;
 		}
 
@@ -53,10 +57,10 @@
 			<section data-transition="zoom">
 				<h4>概要</h4>
 				<ul>
-					<li style="font-size: 30px;" class="fragment grow">0. git page 简介</li>
-					<li style="font-size: 30px;" class="fragment grow">1. 什么是持续集成</li>
-					<li style="font-size: 30px;" class="fragment grow">2. 持续集成的昨天</li>
-					<li style="font-size: 30px;" class="fragment grow">3. 持续集成的今天</li>
+					<li style="font-size: 30px;" class="fragment fade-up">0. git page 简介</li>
+					<li style="font-size: 30px;" class="fragment fade-up">1. 什么是持续集成</li>
+					<li style="font-size: 30px;" class="fragment fade-up">2. 持续集成的昨天</li>
+					<li style="font-size: 30px;" class="fragment fade-up">3. 持续集成的今天</li>
 				</ul>
 			</section>
 			<section data-transition="fade-in slide-out">
@@ -74,67 +78,110 @@
 				</ul>
 			</section>
 			<section>
-				<h4>持续集成的昨天</h4>
-				<li style="list-style: none;">Deployment by Worker</li>
-				<li style="list-style: none; margin-top: 150px;" class="fragment fade-in"><a
-						href="https://github.com/ZQ-jhon/resume" alt="_blank">🌰</a>
-				</li>
-			</section>
-			<section>
-				<h4>有啥不对的地方么？</h4>
-				<ul>
-					<li class="fragment">敏捷吗？</li>
-					<li class="fragment">解放了复杂劳动吗？</li>
-				</ul>
-			</section>
-			<section>
-				<h4>我们需要持续集成</h4>
-				<li style="list-style: none; margin-top: 20px; font-size: 30px; text-align: left; padding-left: 300px;"
-					class="fragment fade-in">(developer) 持续的在源码分支开发</liv>
-				<li style="list-style: none; margin-top: 20px; font-size: 30px; text-align: left; padding-left: 300px;"
-					class="fragment fade-in">(developer) 持续的 git push</li>
-				<li style="list-style: none; margin-top: 20px; font-size: 30px; text-align: left; padding-left: 300px;"
-					class="fragment fade-in">(cloudify) 持续的构建</li>
-				<li style="list-style: none; margin-top: 20px; font-size: 30px; text-align: left; padding-left: 300px;"
-					class="fragment fade-in">(cloudify) 持续的测试</li>
-				<li style="list-style: none; margin-top: 20px; font-size: 30px; text-align: left; padding-left: 300px;"
-					class="fragment fade-in">(cloudify) 持续的 publish </li>
-				<li style="list-style: none; margin-top: 20px; font-size: 30px; text-align: left; padding-left: 300px;"
-					class="fragment fade-in">(最终目的) 持续高效的为产品带来价值</li>
-			</section>
-			<section>
-				<h4>感觉好点了</h4>
-				<li style="list-style: none;" class="fragment fade-out">Deployment by 3rd-Party CI Tools</li>
-				<li style="list-style: none;" class="fragment fade-in">
-					<a href="https://circleci.com/">
-						<img src="./assets/images/cycle.png" alt="">
-					</a>
-				</li>
-				<li style="list-style: none;" class="fragment fade-in">
-					<a href="https://travis-ci.org/">
-						<img src="./assets/images/Travis-CI-logo.jpg" alt="Travis-CI">
-					</a>
-				</li>
-			</section>
-			<section style="padding: 0;">
-				<h4 style="padding: 0; margin: 0;">.travis.yml</h4>
-				<img src="./assets/images/carbon.png" style="margin-top: 0;height: 635px;" alt="carbon">
+				<section>
+					<h4>pre continues intergration</h4>
+					<li>Deployment by Worker</li>
+					<li style="margin-top: 150px;" class="fragment fade-in">
+						<a href="https://github.com/ZQ-jhon/draw-a-dora-A-mon-online" alt="_blank">🌰</a>
+					</li>
+				</section>
+				<section>
+					<h4>人工部署的问题</h4>
+					<ul>
+						<li class="fragment">敏捷吗？</li>
+						<li class="fragment">可靠吗？</li>
+						<li class="fragment">解放了复杂劳动吗？</li>
+					</ul>
+				</section>
+				<section>
+					<h4>什么是持续集成 (Continuous Intergration)？</h4>
+					<li style="margin-top: 20px; font-size: 30px; text-align: left; padding-left: 300px;"
+						class="fragment fade-in">(developer) 持续的在源码分支开发</liv>
+					<li style="margin-top: 20px; font-size: 30px; text-align: left; padding-left: 300px;"
+						class="fragment fade-in">(developer) 持续的 git push</li>
+					<li style="margin-top: 20px; font-size: 30px; text-align: left; padding-left: 300px;"
+						class="fragment fade-in">(cloud) 持续的构建</li>
+					<li style="margin-top: 20px; font-size: 30px; text-align: left; padding-left: 300px;"
+						class="fragment fade-in">(cloud) 持续的测试</li>
+					<li style="margin-top: 20px; font-size: 30px; text-align: left; padding-left: 300px;"
+						class="fragment fade-in">(cloud) 持续的 publish </li>
+					<li style="margin-top: 20px; font-size: 30px; text-align: left; padding-left: 300px;"
+						class="fragment fade-in">(最终目的) 持续高效的为产品带来价值</li>
+				</section>
+				<section>
+					<h4>📑 翻译成人话</h4>
+					<li class="fragment fade-up" style="margin-top: 20px; font-size: 30px; text-align: left;">
+						一切需要在本地进行人为操作的时间成本及计算资源，全部转嫁到云端，并在云端制成相应的管道，自动的进行每一次的产品的构建、测试、发布。
+					</li>
+					<!-- <p class="fragment fade-up">fade-up (also down, left and right!)</p>
+				<p class="fragment fade-in-then-out">fades in, then out when we move to the next step</p>
+				<p class="fragment fade-in-then-semi-out">fades in, then obfuscate when we move to the next step</p> -->
+				</section>
+				<section>
+					<h4>Better Practice</h4>
+					<li class="fragment fade-out">Deployment by 3rd-Party CI Tools</li>
+					<li class="fragment fade-in">
+						<a href="https://circleci.com/">
+							<img src="./assets/images/cycle.png" alt="">
+						</a>
+					</li>
+					<li class="fragment fade-in">
+						<a href="https://travis-ci.org/">
+							<img src="./assets/images/Travis-CI-logo.jpg" alt="Travis-CI">
+						</a>
+					</li>
+				</section>
+				<section style="padding: 0;">
+					<h4 style="padding: 0; margin: 0;">.travis.yml</h4>
+					<img src="./assets/images/carbon.png" style="margin-top: 0;height: 635px;" alt="carbon">
+				</section>
+				<section>
+					<h4>能不能再贪心一点？</h4>
+					<li class="fragment fade-up" style="margin-top: 20px; padding-left: 21%; text-align: left;">
+						持续集成的逻辑可以拆分以及复用吗？
+					</li>
+					<li class="fragment fade-up" style="margin-top: 20px; padding-left: 21%; text-align: left;">
+						Has onIssue/onPr and more ... ?
+					</li>
+					<li class="fragment fade-up" style="margin-top: 40px;">
+						<a href="https://help.github.com/cn/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows">🌰</a>
+					</li>
+				</section>
 			</section>
 
+
 			<section>
-				<h4>持续（工业）集成的明天</h4>
-				<div style="margin: 0; padding: 0;" class="fragment fade-out">
-					<img src="./assets/images/github.png" alt="">
-				</div>
+				<section>
+					<h4>工业集成的明天 GitHub Action</h4>
+					<li class="fragment fade-up"><img src="./assets/images/github-caculate-resource.jpg"></li>
+				</section>
+				<section>
+					<h4>Github Action</h4>
+					<li>
+						<a
+							href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/virtual-environments-for-github-hosted-runners#supported-runners-and-hardware-resources#Supported%20runners%20and%20hardware%20resources">
+							给力的配置
+						</a>
+					</li>
+					<li>
+						<img class="fragment fade-up" src="./assets/images/virtual-machine.png" />
+					</li>
+				</section>
+
 
 			</section>
+
 
 			<section>
 				<h4>Tanks!</h4>
 				<ul>
-					<li>PPT by <a href="https://github.com/hakimel/reveal.js">reveal.js</a></li>
-					<li>Code2Image by <a href="https://carbon.now.sh/" style="color: aqua;">carbon</a></li>
-					<li>本次分享的源码 <a href="https://github.com/ZQ-jhon/internal-conference" style="color: coral;">Source Code</a></li>
+					<li class="fragment fade-up">PPT Powerd by <a
+							href="https://github.com/hakimel/reveal.js">reveal.js</a></li>
+					<li class="fragment fade-up">Code2Image by <a href="https://carbon.now.sh/"
+							style="color: aqua;">carbon</a></li>
+					<li class="fragment fade-up">本次分享 PPT 的源码 <a href="https://github.com/ZQ-jhon/internal-conference"
+							style="color: coral;">Source
+							Code</a></li>
 				</ul>
 			</section>
 		</div>
