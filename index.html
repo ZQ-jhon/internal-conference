@@ -46,6 +46,7 @@
 <body>
 	<div class="reveal">
 		<div class="slides">
+			<!--Index-->
 			<section data-transition="fade-out">
 				<h4>
 					《GitHub 项目部署 & 持续集成》 实践分享
@@ -54,6 +55,8 @@
 					By SheenCity.PSG.zhangqiang
 				</p>
 			</section>
+
+			<!--schema-->
 			<section data-transition="zoom">
 				<h4>概要</h4>
 				<ul>
@@ -63,38 +66,52 @@
 					<li style="font-size: 30px;" class="fragment fade-up">3. 持续集成的今天</li>
 				</ul>
 			</section>
+
+			<!--git page-->
 			<section data-transition="fade-in slide-out">
 				<h4>
 					What is git page
 				</h4>
-				<ul>
-					<li class="fragment fade-out">
-						<a class="grow"
-							href="https://github.com/ZQ-jhon/algorithm-docs/settings">https://github.com/ZQ-jhon/algorithm-docs/settings</a>
-					</li>
-					<li class="fragment fade-in" style="color:aqua;">
-						Support public project only
-					</li>
-				</ul>
-			</section>
-			<section>
-				<section>
-					<h4>pre continues intergration</h4>
+
+				<section data-transition="zoom">
+					<ul>
+						<li class="fragment fade-in">
+							<a class="grow"
+								href="https://github.com/ZQ-jhon/algorithm-docs/settings">https://github.com/ZQ-jhon/algorithm-docs/settings</a>
+						</li>
+						<li class="fragment fade-in">
+							free static server & free host url
+						</li>
+						<li class="fragment fade-in">
+							<a style="color:aqua;" href="https://github.com/ZQ-jhon/amazon/settings"> Support public
+								project only </a>
+						</li>
+					</ul>
+				</section>
+
+				<section data-transition="zoom">
 					<li>Deployment by Worker</li>
 					<li style="margin-top: 150px;" class="fragment fade-in">
 						<a href="https://github.com/ZQ-jhon/draw-a-dora-A-mon-online" alt="_blank">🌰</a>
 					</li>
 				</section>
-				<section>
+				<section data-transition="zoom">
 					<h4>人工部署的问题</h4>
 					<ul>
 						<li class="fragment">敏捷吗？</li>
-						<li class="fragment">可靠吗？</li>
 						<li class="fragment">解放了复杂劳动吗？</li>
+						<li class="fragment">能够周期性运行吗？</li>
 					</ul>
 				</section>
+			</section>
+
+			<!--pre continues intergration-->
+			<section>
+
+				<h4>什么是持续集成 (Continuous Intergration)？</h4>
+
 				<section>
-					<h4>什么是持续集成 (Continuous Intergration)？</h4>
+					<h6 class="fragment fade-in">特性</h6>
 					<li style="margin-top: 20px; font-size: 30px; text-align: left; padding-left: 300px;"
 						class="fragment fade-in">(developer) 持续的在源码分支开发</liv>
 					<li style="margin-top: 20px; font-size: 30px; text-align: left; padding-left: 300px;"
@@ -108,10 +125,15 @@
 					<li style="margin-top: 20px; font-size: 30px; text-align: left; padding-left: 300px;"
 						class="fragment fade-in">(最终目的) 持续高效的为产品带来价值</li>
 				</section>
+
 				<section>
 					<h4>📑 翻译成人话</h4>
-					<li class="fragment fade-up" style="margin-top: 20px; font-size: 30px; text-align: left;">
-						一切需要在本地进行人为操作的时间成本及计算资源，全部转嫁到云端，并在云端制成相应的管道，自动的进行每一次的产品的构建、测试、发布。
+					<li class="fragment fade-in">这里的 CI 泛指 CI + CD (deploy + delivery)</li>
+					<li class="fragment fade-in" style="margin-top: 20px; font-size: 30px; text-align: left;">
+						一切需要在本地进行人为操作的时间成本及计算资源，全部转嫁到云端，并在云端制成相应的管道，自动的/定时的进行每一次的产品的构建、测试、发布。
+					</li>
+					<li class="fragment fade-in" style="margin-top: 20px; font-size: 30px; text-align: left;">
+						CI 的根本目的是为了解决瀑布的开发流程，其理念和敏捷开发不谋而合，同时也是 Scrume 的基石。
 					</li>
 					<!-- <p class="fragment fade-up">fade-up (also down, left and right!)</p>
 				<p class="fragment fade-in-then-out">fades in, then out when we move to the next step</p>
@@ -131,32 +153,76 @@
 						</a>
 					</li>
 				</section>
-				<section style="padding: 0;">
-					<h4 style="padding: 0; margin: 0;">.travis.yml</h4>
-					<img src="./assets/images/carbon.png" style="margin-top: 0;height: 635px;" alt="carbon">
-				</section>
 				<section>
-					<h4>能不能再贪心一点？</h4>
+					<h4>Travis CI flow</h4>
+					<li class="fragment fade-in"
+						style="margin-top: 20px; font-size: 30px; text-align: left; padding-left: 322px;">
+						<a href="https://github.com/settings/tokens/215004307"> (pre-devlop) 签发Token </a>
+					</li>
+					<li class="fragment fade-in"
+						style="margin-top: 20px; font-size: 30px; text-align: left; padding-left: 322px;">
+						<a href="https://travis-ci.org/ZQ-jhon/ZQ-jhon.github.io/settings">(pre-devlop) CI Setting</a>
+					</li>
+					<li class="fragment fade-in"
+						style="margin-top: 20px; font-size: 30px; text-align: left; padding-left: 322px;">
+						(pre-devlop) 编写配置文件
+					</li>
+					<li class="fragment"
+						style="margin-top: 20px; font-size: 30px; text-align: left; padding-left: 322px;">
+						(develop) Git push
+					</li>
+				</section>
+				<section style="padding: 0; margin-top: 0; top: 0;">
+					<p style="margin-top: 45px;">配置文件</p>
+					<img src="./assets/images/carbon.png" style="margin-top: 0;height: 600px;"
+						alt="carbon">
+				</section>
+				<section data-transition="zoom">
+					<h4>能不能再贪心一点 ？</h4>
 					<li class="fragment fade-up" style="margin-top: 20px; padding-left: 21%; text-align: left;">
 						持续集成的逻辑可以拆分以及复用吗？
 					</li>
 					<li class="fragment fade-up" style="margin-top: 20px; padding-left: 21%; text-align: left;">
 						Has onIssue/onPr/onFork/onStar and more ... ?
 					</li>
-					<li class="fragment fade-up" style="margin-top: 40px;">
-						<a href="https://help.github.com/cn/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows">🌰</a>
-					</li>
 				</section>
 			</section>
 
+			<!-- Github action-->
+			<section data-transition="zoom">
+				<h4>CI 的下一个形态 GitHub Action</h4>
+				<section data-transition="zoom">
+					2019 github universe
 
-			<section>
-				<section>
-					<h4>工业集成的明天 GitHub Action</h4>
-					<li class="fragment fade-up"><img src="./assets/images/github-caculate-resource.jpg"></li>
+				</section>
+				<section data-transition="zoom">
+					<h5 class="fragment">核心概念</h5>
+					<li class="fragment">action 触发事件</li>
+					<li class="fragment">runner 实例</li>
+					<li class="fragment">jobs 业务(构建/测试/发布)</li>
+					<li class="fragment">steps 琐碎的步骤</li>
+					<li class="fragment">
+						<img src="assets/images/flow.png" />
+					</li>
 				</section>
 				<section>
-					<h4>Github Action</h4>
+					<h6 class="fragment fade-in" style="margin-top: 100px;">Github Action 特性</h6>
+					<li class="fragment fade-up"
+						style="margin-top: 20px; font-size: 30px; text-align: left; padding-left: 322px;">
+						<a
+							href="https://help.github.com/cn/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows">更多的事件
+							🌰</a>
+					</li>
+					<li class="fragment fade-up"
+						style="margin-top: 20px; font-size: 30px; text-align: left; padding-left: 322px;">
+						<a href="https://github-actions.netlify.com/">更丰富的 plugin 🌰</a>
+					</li>
+				</section>
+				<section data-transition="zoom">
+					<h6 style="margin-top: 100px;">生态带来的强大的吸引力</h6>
+					<li class="fragment fade-up"><img src="./assets/images/github-caculate-resource.jpg"></li>
+				</section>
+				<section data-transition="zoom">
 					<li>
 						<a
 							href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/virtual-environments-for-github-hosted-runners#supported-runners-and-hardware-resources#Supported%20runners%20and%20hardware%20resources">
@@ -168,10 +234,17 @@
 					</li>
 				</section>
 
-
+				<section data-transition="zoom">
+					<h6>配置 Demo</h6>
+					<a
+						href="https://github.com/strokewithcode/strokewithcode.github.io/blob/hexo/.github/workflows/ci.yml">
+						🌰
+					</a>
+				</section>
 			</section>
 
 
+			<!--Thanks-->
 			<section>
 				<h4>Tanks!</h4>
 				<ul>
