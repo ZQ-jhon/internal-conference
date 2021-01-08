@@ -21,7 +21,7 @@
     "load-grunt-tasks": "5.1.0",
     "node-sass": "5.0.0",
     "mustache": "2.3.2",
-    "socket.io": "3.0.4"
+    "socket.io": "3.0.5"
   },
   "license": "MIT"
 }
