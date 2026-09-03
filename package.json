@@ -16,7 +16,7 @@
     "grunt-contrib-qunit": "5.0.1",
     "grunt-contrib-uglify": "5.0.1",
     "grunt-contrib-watch": "1.1.0",
-    "grunt-sass": "3.1.0",
+    "grunt-sass": "4.1.0",
     "grunt-zip": "0.18.2",
     "load-grunt-tasks": "5.1.0",
     "node-sass": "6.0.1",
